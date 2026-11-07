@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: chat-app
+spec:
+  type: ClusterIP
+  selector:
+    app: frontend   # must match the labels in your frontend deployment
+  ports:
+    - port: 80
+      targetPort: 80   # the container's actual port
+
